@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style id="colors"></style>
+</head>
+<body>
+    <div class="content background-color">
+        <div class="box accent-color">
+            <h1 class="text-color">daave</h1>
+            <h3 class="text-color">Hello World</h3>
+            <label for="background-color">
+                    Style:
+                    <input type="color" id="choose-color">
+            </label>
+        </div>
+    </div>
+
+    <div id="controls">
+        <label for="background-color">
+            Background Colour:
+            <input type="color" id="background-color">
+        </label><br>
+        <label for="text-color">
+            Text Color:
+            <input type="color" id="text-color">
+        </label><br>
+        <label for="accent-color">
+            Accent Color:
+            <input type="color" id="accent-color">
+        </label><br>
+        <input id="save-colors" type="submit" value="I Love it!">
+    </div>
+
+   
+</body>
+</html>
