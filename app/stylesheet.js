@@ -4,17 +4,18 @@ export default class stylesheetUpdate {
     }
 
     update(obj) {
+        console.log(obj)
         let styles = `
             .background-color {
-                background-color: rgba(${obj.input.bg.r}, ${obj.input.bg.b}, ${obj.input.bg.g}, 1);
+                background-color: rgba(${obj.input[0][0]}, ${obj.input[0][1]}, ${obj.input[0][2]}, 1);
             }
 
             .text-color {
-                color: rgb(${obj.output.text.r}, ${obj.output.text.b}, ${obj.output.text.g})
+                color: rgb(${obj.output[0][0]}, ${obj.output[0][1]}, ${obj.output[0][2]})
             }
 
             .accent-color {
-                border-color: rgb(${obj.output.accent.r}, ${obj.output.accent.b}, ${obj.output.accent.g})
+                border-color: rgb(${obj.output[1][0]}, ${obj.output[1][1]}, ${obj.output[1][2]})
             }
 
         `

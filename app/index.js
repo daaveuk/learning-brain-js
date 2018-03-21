@@ -4,6 +4,7 @@
 
 import brainProgrammer from 'program.js'
 import brain from 'brain.js/src/index'
+import Store from 'store.js'
 
 // Load application styles
 import 'styles/index.scss';
@@ -22,10 +23,22 @@ document.addEventListener("DOMContentLoaded", function(){
     let _brainProgrammer = new brainProgrammer(backgoundColorInput, textColorInput, accentColorInput, saveColors)
 
 
+    let _brainButton = document.getElementById('brain-button')
 
-    // var net = new brain.NeuralNetwork();
+    let _store = new Store('brainColors')
+    _brainButton.addEventListener('click', () => {
+        var net = new brain.NeuralNetwork();
+        
+        net.train(_store.get());
 
-    // net.train();
+        console.log(net.train(_store.get()))
 
-    // var output = net.run({ r: 1, g: 0.4, b: 0 });  // { white: 0.99, black: 0.002 }
+        var output = net.run({r: 0, g: 1, b: 0.65});  // { white: 0.99, black: 0.002 }
+
+        console.log(output)
+    })
+
+
+
+
 });
