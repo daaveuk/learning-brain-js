@@ -28,12 +28,10 @@ document.addEventListener("DOMContentLoaded", function(){
     let _store = new Store('brainColors')
     _brainButton.addEventListener('click', () => {
         var net = new brain.NeuralNetwork();
-        
-        net.train(_store.get());
+        console.log(_store.get().brainColors)
+        net.train(_store.get().brainColors);
 
-        console.log(net.train(_store.get()))
-
-        var output = net.run({r: 0, g: 1, b: 0.65});  // { white: 0.99, black: 0.002 }
+        var output = net.run({ r: 1, g: 0.4, b: 0 });  // { white: 0.99, black: 0.002 }
 
         console.log(output)
     })

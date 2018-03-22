@@ -29,8 +29,8 @@ export default class brainProgrammer {
 
     generateBrainObj() {
         return {
-            input: [this.getRgb(this.backgroundColorInput.value)],
-            output: [this.getRgb(this.textColorInput.value), this.getRgb(this.accentColorInput.value)]
+            input: this.getRgb(this.backgroundColorInput.value),
+            output: this.getRgb(this.textColorInput.value)
         }
     }
 

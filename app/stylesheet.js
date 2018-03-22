@@ -7,17 +7,12 @@ export default class stylesheetUpdate {
         console.log(obj)
         let styles = `
             .background-color {
-                background-color: rgba(${obj.input[0][0]}, ${obj.input[0][1]}, ${obj.input[0][2]}, 1);
+                background-color: rgba(${Math.round(obj.input.r * 255)}, ${Math.round(obj.input.g * 255)}, ${Math.round(obj.input.b * 255)}, 1);
             }
 
             .text-color {
-                color: rgb(${obj.output[0][0]}, ${obj.output[0][1]}, ${obj.output[0][2]})
+                color: rgb(${Math.round(obj.output.r * 255)}, ${Math.round(obj.output.g * 255)}, ${Math.round(obj.output.b * 255)})
             }
-
-            .accent-color {
-                border-color: rgb(${obj.output[1][0]}, ${obj.output[1][1]}, ${obj.output[1][2]})
-            }
-
         `
 
         this.stylesheet.innerHTML = styles
